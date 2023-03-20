@@ -1,10 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+
 /**
-*
-* main - this program generates each time it is executed a random number 
-*	and prints if it is positive or negative or it is a zero
+ * main - this program generates each time it is executed a random number
+ *       and prints if it is positive or negative or it is a zero.
+ *
+ * Return: Always 0.
 */
 int main(void)
 {
