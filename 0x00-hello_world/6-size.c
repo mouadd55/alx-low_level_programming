@@ -1,5 +1,9 @@
 #include <stdio.h>
-
+/**
+ * the program prints the size the of each data type followed by a '\n'
+ *
+ *  Return: Always 0 (Success)
+ */
 int main(void)
 {
 		int a;
