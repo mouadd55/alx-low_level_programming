@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - the program prints the sentence below 
+ * main - the program prints the sentence below
  *
  *  Return: Always 0 (Success)
  */
