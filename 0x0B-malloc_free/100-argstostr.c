@@ -35,7 +35,7 @@ char *argstostr(int ac, char **av)
 	}
 	for (i = j = m = 0; m < n; j++, m++)
 	{
-		if (av[i][j])
+		if (!av[i][j])
 		{
 			str[m] = '\n';
 			i++;
