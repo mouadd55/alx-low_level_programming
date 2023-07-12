@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * read_textfile - reads a text file and prints the letters
@@ -9,20 +10,22 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
+	ssize_t fd;
+	ssize_t read_return_value;
+	ssize_t write_return_value;
 	char *buffer;
-    ssize_t	read_return_value;
-	ssize_t	write_return_value;
 
 	if (filename == NULL)
 		return (0);
+
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
 	read_return_value = read(fd, buffer, letters);
 	write_return_value = write(STDOUT_FILENO, buffer, read_return_value);
-	if (fd == -1 || read_return_value == -1 || write_return_value == -1)
+	if (fd == -1 || read_return_value == -1
+        || write_return_value == -1 || write_return_value != read_return_value)
 	{
 		free(buffer);
 		return (0);
