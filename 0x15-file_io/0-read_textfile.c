@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * read_textfile - reads a text file and prints the letters
@@ -10,9 +9,7 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t fd;
-	ssize_t read_return_value;
-	ssize_t write_return_value;
+	ssize_t o, r, w;
 	char *buffer;
 
 	if (filename == NULL)
@@ -21,16 +18,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 		return (0);
-	fd = open(filename, O_RDONLY);
-	read_return_value = read(fd, buffer, letters);
-	write_return_value = write(STDOUT_FILENO, buffer, read_return_value);
-	if (fd == -1 || read_return_value == -1
-        || write_return_value == -1 || write_return_value != read_return_value)
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
+	if (o == -1 || r == -1 || w == -1 || w != r)
 	{
 		free(buffer);
 		return (0);
 	}
 	free(buffer);
-	close(fd);
-	return (write_return_value);
+	close(o);
+	return (w);
 }
