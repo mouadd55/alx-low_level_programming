@@ -37,7 +37,6 @@ void	open_files(int ac, char **av, int *file_from, int *file_to)
 */
 int main(int ac, char **av)
 {
-	int		tmp;
     int		file_to;
 	int		file_from;
 	ssize_t	l_write;
