@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * open_files - open files 
+ * open_files - open files
  * @file_from: fd of the file which we will copy from
  * @file_to: fd of the file which we will copy to
  * @ac: number of arguments
@@ -37,7 +37,7 @@ void	open_files(int ac, char **av, int *file_from, int *file_to)
 */
 int main(int ac, char **av)
 {
-    int		file_to;
+	int		file_to;
 	int		file_from;
 	ssize_t	l_write;
 	ssize_t	close_file;
