@@ -9,10 +9,10 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int o;
-    int w;
-    int len;
+	int w;
+	int len;
 
-    len = 0;
+	len = 0;
 	if (filename == NULL)
 		return (-1);
 	if (text_content)
