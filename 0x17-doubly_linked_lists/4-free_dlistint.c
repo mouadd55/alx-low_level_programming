@@ -5,8 +5,8 @@
  * @head: doubly linked list
  * Return: nothing
 */
-	void free_dlistint(dlistint_t *head)
-	{
+void free_dlistint(dlistint_t *head)
+{
 	dlistint_t	*tmp;
 
 	tmp = head;
@@ -16,4 +16,4 @@
 		free(head);
 		(head) = tmp;
 	}
-	}
+}
