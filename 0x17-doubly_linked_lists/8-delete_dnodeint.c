@@ -1,5 +1,11 @@
 #include "lists.h"
 
+/**
+ * delete_dnodeint_at_index - deletes the node at index index
+ * @head: doubly linkedlist
+ * @index: index to remove node
+ * Return: 1 if removed, -1 if fails
+*/
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int	count;
